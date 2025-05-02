@@ -5,16 +5,16 @@ class FacturaDetalleRoutes:
         self.app_initializer=app_initializer
         self.routes()
     def routes(self):
-        @self.app.route('/microservice/v1/get/factura_detalle', methods=['GET'])
+        @self.app.route('/v1/factura_detalle', methods=['GET'])
         def get_facturas_detalle():
             return self.app_initializer.getControllersFacturaDetalle().get_facturas_detalle()
-        @self.app.route('/microservice/v1/get/factura_detalle/<int:id>', methods=['GET'])
+        @self.app.route('/v1/factura_detalle/<int:id>', methods=['GET'])
         def get_factura_detalle_by_id(id):
             return self.app_initializer.getControllersFacturaDetalle().get_factura_detalle(id)
-        @self.app.route('/microservice/v1/post/factura_detalle',methods=['POST'])
+        @self.app.route('/v1/post/factura_detalle',methods=['POST'])
         def post_factura_detalle():
             return self.app_initializer.getControllersFacturaDetalle().post_factura_detalle(request.json)
-        @self.app.route('/microservice/v1/put/factura_detalle/<int:id>',methods=['PUT'])
+        @self.app.route('/v1/put/factura_detalle/<int:id>',methods=['PUT'])
         def put_factura_detalle(id):
             return self.app_initializer.getControllersFacturaDetalle().put_factura_detalle(id,data=request.json)
         
